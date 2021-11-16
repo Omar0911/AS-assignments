@@ -1,0 +1,36 @@
+        Declare Str1 : String
+        Declare ThisChar, ThisChar2, MostChar : Char
+        Declare Count, Count2, CurrCount, MostCount : Integer
+
+        Str1 <-- ""
+        ThisChar <-- ''
+        ThisChar2 <--''
+        MostChar <-- ''
+        Count <-- 0
+        MostCount <-- 0
+        CurrCount <-- 0
+
+        OUTPUT "please enter string to be used: "
+        Input Str1
+
+        For Count <-- 1 To Length(Str1)
+            ThisChar <-- Mid(Str1, Count, 1)
+            CurrCount <-- 0
+            For Count2 <-- 1 To Length(Str1)
+                ThisChar2 <-- Mid(Str1, Count2, 1)
+
+                If ThisChar2 = ThisChar Then
+                    CurrCount <-- CurrCount + 1
+                End If
+            Next
+
+            If CurrCount > MostCount Then
+                MostCount <-- CurrCount
+                MostChar <-- ThisChar
+            End If
+
+
+        Next
+
+        OUTPUT "The most used char is: " & MostChar & " and it appeared: " & MostCount
+        END

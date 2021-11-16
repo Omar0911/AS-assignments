@@ -1,0 +1,37 @@
+        DECLARE str1, str2, str3, str4 : String
+        DECLARE lennot, lenbad : Integer
+        DECLARE AFlag : Boolean
+
+        str1 <-- ""
+        str2 <-- ""
+        str3 <-- ""
+        str4 <-- ""
+        lennot <-- 0
+        lenbad <-- 0
+        AFlag = True
+
+        OUTPUT "please enter string to change: " 
+        INPUT str1
+
+        lennot <-- InStr(str1, "not")
+        lenbad <-- InStr(str1, "bad")
+        lenbad <-- lenbad + 2
+
+        If lenbad <> 0 And lennot <> 0 Then
+            If lenbad > lennot Then
+                str3 <-- Left(str1, lennot - 1)
+                str4 <-- Right(str1, Length(str1) - lenbad)
+                str2 <-- str3 & "good" & str4
+                AFlag <-- False
+                OUTPUT str2
+
+            End If
+        End If
+
+        If AFlag <-- True Then
+            If str2 <> "good" Then
+                OUTPUT "This string cannot be used"
+            End If
+        End If
+
+        END

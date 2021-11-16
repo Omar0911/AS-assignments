@@ -1,0 +1,45 @@
+        Declare Str1, Ustr : String
+        Declare ThisChar, countedchar : Char
+        Declare counter, countedcounter, alphacounter, numcounter, symcounter : Integer
+
+        Str1<-- ""
+        Ustr<--  ""
+        ThisChar <--  ''
+        countedchar <--  ''
+        counter <--  0
+        countedcounter <--  0
+        alphacounter <--  0
+        numcounter <--  0
+        symcounter <--  0
+
+        OUTPUT "Please enter string to be used: "
+        INPUT Str1
+        Ustr <-- UPPERCase(Str1)
+
+        OUTPUT "Please enter character to be counted: "
+        INPUT countedchar
+
+        For counter <--  1 To LENGHT(Str1)
+            ThisChar <--  Mid(Str1, counter, 1)
+            If ThisChar = countedchar Then
+                countedcounter <-- countedcounter + 1
+            End If
+        Next
+
+        For counter <-- 1 To Length(Str1)
+            ThisChar <-- Mid(Ustr, counter, 1)
+            If ThisChar >= "A" And ThisChar <= "Z" Then
+                alphacounter <-- alphacounter + 1
+            ElseIf ThisChar >= "0" And ThisChar <= "9" Then
+                numcounter <-- numcounter + 1
+            ElseIf Asc(ThisChar) >= 34 And Asc(ThisChar) <= 47 Then
+                symcounter <-- symcounter + 1
+            End If
+
+        Next
+        OUTPUT"selected character appeared: " & countedcounter
+        OUTPUT"number of alphabets: " & alphacounter
+        OUTPUT"number of numbers: " & numcounter
+        OUTPUT"number of symbols: " & symcounter
+      
+        END

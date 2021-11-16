@@ -1,0 +1,30 @@
+        DECLARE InputStr, abcd : STRING
+        DECLARE Count : INTEGER
+        DECLARE PanagramState : BOOLEAN
+        DECLARE ThisChar : CHARACTER
+
+        ThisChar<---''
+        InputStr<---""
+        abcd<---"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        PanagramState<---True
+        Count <--- 0
+
+        OUTPUT "ENTER A STRING: "
+        INPUT InputStr
+
+        FOR Count<--- 1 To LENGTH(abcd)
+            ThisChar<---MID(InputStr, Count, 1)
+            IF LOCATE(InputStr, ThisChar) = 0 THEN
+                PanagramState<---False
+                EXIT FOR
+            END IF
+        NEXT
+
+        IF PanagramState <-- False THEN
+           OUTPUT "The given string is not a panagram"
+        ELSE
+
+           OUTPUT "the given string is a panagram"
+
+        End IF
+        END    

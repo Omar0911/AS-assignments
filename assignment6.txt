@@ -1,0 +1,14 @@
+        DECLARE numdonuts : Integer
+
+        numdonuts <-- 0
+
+        OUTPUT "please enter the number: "
+        INPUT numdonuts
+
+        If numdonuts > "10" Then
+            OUTPUT "Number of donuts: many"
+        Else
+            OUTPUT "Number of donuts: " & numdonuts
+
+        End If
+        END

@@ -1,0 +1,28 @@
+        Declare str1, str2 : String
+        Declare count : Integer
+        Declare thischar, firstchar : Char
+
+        str1 <-- ""
+        str2 <-- ""
+        count <-- 0
+        thischar <-- ''
+        firstchar <-- ''
+
+
+        OUTPUT("please enter string: ")
+        INPUT str1
+
+        firstchar = Mid(str1, 1, 1)
+        str2 <-- firstchar
+
+        For count <-- 2 To Len(str1)
+            thischar <-- Mid(str1, count, 1)
+            If thischar = firstchar Then
+                str2 <-- str2 & "*"
+            Else
+                str2 <-- str2 & thischar
+            End If
+        Next
+
+        OUTPUT "converted string: " & str2 
+        END

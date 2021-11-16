@@ -1,0 +1,35 @@
+        Declare Str1 : String
+        Declare Thischar : Char
+        Declare count, acount, icount, ecount, ocount, ucount : Integer
+
+        Str1 <-- ""
+        Thischar <-- ''
+        count <-- 0
+        acount <-- 0
+        icount <-- 0
+        ecount <-- 0
+        ocount <-- 0
+        ucount <-- 0
+
+        OUTPUT"please enter string to be used: "
+        INPUT Str1
+        Str1 <-- UCase(Str1)
+
+        For count <-- 1 To Length(Str1)
+            Thischar <-- Mid(Str1, count, 1)
+            Select Case Thischar
+                Case "A" : acount = acount + 1
+                Case "I" : icount = icount + 1
+                Case "E" : ecount = ecount + 1
+                Case "O" : ocount = ocount + 1
+                Case "U" : ucount = ucount + 1
+
+            End Select
+        Next
+
+        OUTPUT "the vowel A appeared: " & acount
+        OUTPUT "the vowel I appeared: " & icount
+        OUTPUT "the vowel E appeared: " & ecount
+        OUTPUT "the vowel O appeared: " & ocount
+        OUTPUT "the vowel U appeared: " & ucount
+       END

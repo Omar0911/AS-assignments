@@ -1,0 +1,30 @@
+        DECLARE Str1, Str2 : STRING
+        DECLARE ThisChar, ReplChar, NewChar : CHARACTER
+        DECLARE Count : INTEGER
+
+        Str1<---""
+        Str2<---""
+        ThisChar<---''
+        ReplChar<---''
+        NewChar<---''
+        Count<---0
+
+       OUTPUT "ENTER A STRING: "
+       INPUT Str1
+
+       OUTPUT "ENTER A CHARACTER YOU WANT TO REPLACE"
+       INPUT ReplChar
+
+       OUTPUT "ENTER A CHARACTER TO REPLACE WITH" 
+       INPUT NewChar
+
+        FOR Count<---1 To LENGTH(Str1)
+            ThisChar<---MID(Str1, Count, 1)
+            IF ThisChar = ReplChar THEN
+                ThisChar <-- NewChar
+            ENDIF
+              Str2 <-- Str2 & ThisChar
+        NEXT
+
+       OUTPUT "The converted string: " & Str2
+       END

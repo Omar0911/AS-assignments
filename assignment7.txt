@@ -1,0 +1,27 @@
+        Declare str1, str2, str3, str4 : String
+        Declare thischar : Char
+        Declare count : Integer
+        Declare lencheck : Boolean
+
+        str1 <-- ""
+        str2 <-- ""
+        str3 <-- ""
+        str4 <-- ""
+        thischar <-- ''
+        count <-- 0
+        lencheck <-- True
+
+        OUTPUT "please enter the string to use: "
+        Input str1
+
+        If Length(str1) < "2" Then lencheck = False
+        If lencheck = True Then
+            str2 <-- Left(str1, 2)
+            str3 <-- Right(str1, 2)
+            str4 <-- str2 & str3
+        Else
+            str4 <-- str1
+        End If
+
+        OUTPUT "output string: " & str4
+        END

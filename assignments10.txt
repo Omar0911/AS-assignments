@@ -1,0 +1,30 @@
+        Declare str1, str2, thischar : String
+        Declare count : Integer
+        Declare lencheck : Boolean
+
+        str1 <-- ""
+        str2 <--  ""
+        count <--  0
+        thischar <-- ""
+        lencheck <--  True
+
+        OUTPUT "enter the string to be used: "
+        INPUT str1
+
+        If Length(str1) < "3" Then lencheck = False
+
+        If lencheck <--  True Then
+            thischar <--  Right(str1, 3)
+            If thischar = "ing" Then
+                str2 <--  str1 & "ly"
+            Else
+                str2 <--  str1 & "ing"
+            End If
+        End If
+
+        If lencheck <--  True Then
+            OUTPUT "converted string is: " & str2
+        Else
+            OUTPUT str1
+        End If
+        END
